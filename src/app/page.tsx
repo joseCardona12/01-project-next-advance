@@ -1,8 +1,10 @@
 
 export default function HomeView(){
     return (
-        <div>
-            <h1>Hello World!</h1>
-        </div>
+        <main className="content-main">
+            <div className="main-message">
+                <h2 className="message">Hello world!</h2>
+            </div>
+        </main>
     )
 }

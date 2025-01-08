@@ -5,14 +5,25 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --color-gray: #cccccc;
+  --background-color-gray:#f0f0f0;
+
+  --padding-small: .8rem;
+  --border-radius-small: .6rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html{
+  box-sizing: border-box;
 }
+
+*,*::after,*::before{
+  box-sizing: inherit;
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+}
+
 
 body {
   color: var(--foreground);
@@ -24,4 +35,36 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+main.content-main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main.content-main > div.main-message{
+  width: 50%;
+  height: 30%;
+  border: 1px solid var(--color-gray);
+  border-radius: var(--border-radius-small);
+  padding: var(--padding-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: scale .4s ease,
+              opacity .4s ease;
+  
+}
+
+main.content-main > div.main-message:hover{
+  background-color: var(--background-color-gray);
+  scale: calc(1.02);
+  opacity: .6;
+}
+
+main.content-main > div.main-message > h2.message{
+  font-weight: bold;
 }
